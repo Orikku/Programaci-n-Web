@@ -1,0 +1,103 @@
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+.nav-link i {
+    font-size: 1.5rem;
+}
+
+/* Estilo para el fondo oscuro de la descripción del carrusel */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+/* Ajuste de la altura y el ajuste de las imágenes del carrusel */
+.carousel-item img {
+    object-fit: cover;
+    height: 400px; /* Ajusta la altura según prefieras */
+}
+
+/* Ancho máximo del carrusel y centrado */
+.carousel-container {
+    max-width: 800px; /* Ancho máximo deseado */
+    margin: 0 auto; /* Centrar el carrusel */
+}
+
+/* Estructura de la Sección de Promociones */
+.promo-section {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar la sección en la pantalla */
+    padding: 2rem;
+    background-color: #ffffff;
+}
+
+/* Alineación del Contenido Interno */
+.text-content, .promo-image {
+    margin: 0 auto;
+}
+
+/* Estilos del Logo y Título */
+.promo-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrar el logo y el título */
+}
+
+.promo-icon {
+    height: 40px;
+    margin-right: 0.5rem;
+}
+
+.promo-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Estilos del Texto */
+.promo-heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+    margin-top: 1rem;
+    text-align: center; /* Centra el título */
+}
+
+.promo-description {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 1rem;
+    line-height: 1.5;
+    text-align: center; /* Centra el texto descriptivo */
+}
+
+/* Estilos del Botón */
+.promo-button {
+    background-color: #e64a19;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.promo-button:hover {
+    background-color: #d84315;
+}
+
+/* Estilos de la Imagen */
+.promo-image {
+    border-radius: 10px;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto; /* Centra la imagen */
+}
