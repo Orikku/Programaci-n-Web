@@ -86,8 +86,9 @@
     border-radius: 5px;
     text-decoration: none;
     display: inline-block;
-    margin-top: 1.5rem;
     text-align: center;
+    margin-top: 2rem; /* Ajusta este valor para mover hacia abajo */
+    margin-left: 8.5rem; /* Ajusta este valor para mover hacia la derecha */
 }
 
 .promo-button:hover {
