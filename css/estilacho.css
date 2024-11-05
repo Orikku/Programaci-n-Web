@@ -9,24 +9,6 @@
     font-size: 1.5rem;
 }
 
-/* Estilo para el fondo oscuro de la descripción del carrusel */
-.carousel-caption {
-    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
-    padding: 1rem;
-    border-radius: 10px;
-}
-
-/* Ajuste de la altura y el ajuste de las imágenes del carrusel */
-.carousel-item img {
-    object-fit: cover;
-    height: 400px; /* Ajusta la altura según prefieras */
-}
-
-/* Ancho máximo del carrusel y centrado */
-.carousel-container {
-    max-width: 800px; /* Ancho máximo deseado */
-    margin: 0 auto; /* Centrar el carrusel */
-}
 
 /* Estructura de la Sección de Promociones */
 .promo-section {

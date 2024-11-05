@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Laboratorio de XSS - Solo HTML y JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Enlace a Bootstrap Icons desde CDN (sin integridad) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/lab.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="px-3 py-2 text-bg-dark border-bottom">
+            <div class="container">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <!-- Logo -->
+                    <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+                        <i class="bi bi-terminal"></i>
+                    </a>
+                    
+                    <!-- Menú de Navegación -->
+                    <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+                        <li>
+                            <a href="home.html" class="nav-link text-secondary">
+                                <i class="bi bi-house-door d-block mx-auto mb-1" style="font-size: 1.5rem;"></i>
+                                <span class="d-block text-center" style="font-size: 0.9rem;">Home</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="lab.html" class="nav-link text-white">
+                                <i class="bi bi-speedometer2 d-block mx-auto mb-1" style="font-size: 1.5rem;"></i>
+                                <span class="d-block text-center" style="font-size: 0.9rem;">Lab</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="ana.html" class="nav-link text-white">
+                                <i class="bi bi-table d-block mx-auto mb-1" style="font-size: 1.5rem;"></i>
+                                <span class="d-block text-center" style="font-size: 0.9rem;">Analitca</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+<h1>Vulnerabilidad</h1>
+
+    <div class="vm-container">
+        <!-- Barra de título de la "máquina virtual" -->
+        <div class="vm-title-bar">
+            <span>Laboratorio de Cross-Site Scripting (XSS) </span>
+            <div class="vm-buttons">
+                <div class="vm-button"></div>
+                <div class="vm-button"></div>
+                <div class="vm-button"></div>
+            </div>
+        </div>
+        
+        <!-- Contenido de la "máquina virtual" -->
+        <div class="vm-content">
+            <p>Ingresa un comentario:</p>
+            
+            <!-- Formulario para ingresar un comentario -->
+            <input type="text" id="comentario" placeholder="Escribe tu comentario" class="form-control mb-2">
+            <button onclick="agregarComentario()" class="btn btn-warning w-100">Enviar</button>
+
+            <!-- Sección para mostrar los comentarios ingresados -->
+            <div id="comentarios">
+                <h2>Comentarios:</h2>
+            </div>
+        </div>
+    </div>
+
+<h1>Proteccion </h1>
+
+    <div class="vm-container">
+        <!-- Barra de título de la "máquina virtual" -->
+        <div class="vm-title-bar">
+            <span>Laboratorio de (XSS) - Buenas Practicas</span>
+            <div class="vm-buttons">
+                <div class="vm-button"></div>
+                <div class="vm-button"></div>
+                <div class="vm-button"></div>
+            </div>
+        </div>
+        
+        <!-- Contenido de la "máquina virtual" -->
+        <div class="vm-content">
+            <p>Ingresa un comentario:</p>
+            
+            <!-- Formulario para ingresar un comentario -->
+            <input type="text" id="comentario" placeholder="Escribe tu comentario" class="form-control mb-2">
+            <button onclick="agregarComentario()" class="btn btn-warning w-100">Enviar</button>
+
+            <!-- Sección para mostrar los comentarios ingresados -->
+            <div id="comentarios">
+                <h2>Comentarios:</h2>
+            </div>
+        </div>
+    </div>
+    <script src="js/lab.js"></script>
+    <script src="js/lab-segu.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
