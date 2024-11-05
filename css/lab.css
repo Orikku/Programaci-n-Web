@@ -1,4 +1,14 @@
 /* Estilos para la simulación de "máquina virtual" */
+.nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+.nav-link i {
+    font-size: 1.5rem;
+}
 .vm-container {
     width: 600px;
     margin: 50px auto;
@@ -49,3 +59,115 @@ h1{
     text-align: center;
     padding-top: 30px;
 }
+/* Estilo para el contenedor de código de ejemplo */
+.code-example {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-family: monospace;
+    color: #333;
+    max-width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el bloque de código dentro del contenedor */
+.code-example pre {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Botón "Try it Yourself" dentro del contenedor */
+.code-example .btn {
+    margin-top: 1rem;
+    align-self: flex-start;
+}
+/* Estilos para la simulación de "máquina virtual" */
+.vm-container {
+    width: 100%;
+    margin: 20px auto;
+    border: 2px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #f9f9f9;
+}
+
+/* Barra de título */
+.vm-title-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Botones de la barra de título */
+.vm-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.vm-button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #f66;
+}
+
+.vm-button:nth-child(2) {
+    background-color: #fc6;
+}
+
+.vm-button:nth-child(3) {
+    background-color: #6c6;
+}
+
+/* Área de contenido de la "máquina virtual" */
+.vm-content {
+    padding: 20px;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    padding-top: 30px;
+}
+
+/* Estilo para el contenedor de código de ejemplo */
+.code-example {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-family: monospace;
+    color: #333;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px;
+    overflow-x: auto;
+}
+
+footer {
+    background-color: #131312;
+    color: #ffffff;
+    padding: 2rem 0;
+    text-align: center;
+}
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+footer a:hover {
+    color: #8b8b8b;
+}
+
