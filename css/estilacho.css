@@ -1,95 +1,19 @@
-.nav-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-}
-.nav-link i {
-    font-size: 1.5rem;
+/* CSS General */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
 }
 
-
-/* Estructura de la Sección de Promociones */
-.promo-section {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centrar la sección en la pantalla */
-    padding: 2rem;
-    background-color: #ffffff;
-}
-
-/* Alineación del Contenido Interno */
-.text-content, .promo-image {
-    margin: 0 auto;
-}
-
-/* Estilos del Logo y Título */
-.promo-logo {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Centrar el logo y el título */
-}
-
-.promo-icon {
-    height: 40px;
-    margin-right: 0.5rem;
-}
-
-.promo-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #000;
-}
-
-/* Estilos del Texto */
-.promo-heading {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #000;
-    margin-top: 1rem;
-    text-align: center; /* Centra el título */
-}
-
-.promo-description {
-    font-size: 1rem;
-    color: #555;
-    margin-top: 1rem;
+body {
+    background-color: #f9f9f9;
+    font-size: 16px;
     line-height: 1.5;
-    text-align: center; /* Centra el texto descriptivo */
+    color: #333;
 }
 
-/* Estilos del Botón */
-.promo-button {
-    background-color: #131312;
-    color: #fff;
-    font-weight: bold;
-    padding: 0.75rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    display: inline-block;
-    text-align: center;
-    margin-top: 2rem; /* Ajusta este valor para mover hacia abajo */
-    margin-left: 8.5rem; /* Ajusta este valor para mover hacia la derecha */
-}
-
-.promo-button:hover {
-    background-color: #8b8b8b;
-    color: #000;
-}
-
-/* Estilos de la Imagen */
-.promo-image {
-    border-radius: 10px;
-    max-width: 100%;
-    display: block;
-    margin: 0 auto; /* Centra la imagen */
-}
-.promo-description{
-  text-align: justify;
-}
-
-
+/* Header */
 .nav-link {
     display: flex;
     flex-direction: column;
@@ -97,29 +21,39 @@
     justify-content: center;
     font-size: 0.9rem;
 }
+
 .nav-link i {
     font-size: 1.5rem;
 }
+
+/* Sección de Promociones y Sobre Nosotros */
 .promo-section, .about-section {
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 2rem;
     background-color: #ffffff;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
 }
-.text-content, .promo-image {
+
+.text-content, .promo-image, .about-image {
     margin: 0 auto;
+    max-width: 100%;
 }
+
 .promo-logo {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .promo-title {
     font-size: 1.5rem;
     font-weight: bold;
     color: #000;
+    text-align: center;
 }
+
 .promo-heading, .about-heading {
     font-size: 2rem;
     font-weight: bold;
@@ -127,6 +61,7 @@
     margin-top: 1rem;
     text-align: center;
 }
+
 .promo-description, .about-description {
     font-size: 1rem;
     color: #555;
@@ -134,6 +69,8 @@
     line-height: 1.5;
     text-align: justify;
 }
+
+/* Botones */
 .promo-button, .about-button {
     background-color: #131312;
     color: #fff;
@@ -141,31 +78,73 @@
     padding: 0.75rem 1.5rem;
     border-radius: 5px;
     text-decoration: none;
-    display: inline-block;
+    display: block;
     text-align: center;
-    margin-top: 2rem;
-    margin-left: 8.5rem;
+    margin: 2rem auto; /* Centra el botón en pantallas pequeñas */
+    width: max-content; /* Ajusta el ancho al contenido */
 }
+
 .promo-button:hover, .about-button:hover {
     background-color: #8b8b8b;
     color: #000;
 }
+
+/* Imágenes */
 .promo-image, .about-image {
     border-radius: 10px;
     max-width: 100%;
     display: block;
-    margin: 0 auto;
+    margin: 1rem auto; /* Centra las imágenes */
 }
+
+/* Footer */
 footer {
     background-color: #131312;
     color: #ffffff;
     padding: 2rem 0;
     text-align: center;
 }
+
 footer a {
     color: #ffffff;
     text-decoration: none;
 }
+
 footer a:hover {
     color: #8b8b8b;
+}
+
+/* Consultas de Medios para Responsividad */
+@media (max-width: 768px) {
+    .promo-section, .about-section {
+        flex-direction: column; /* Cambia la dirección a columna en pantallas pequeñas */
+        padding: 1.5rem;
+    }
+
+    .promo-title, .promo-heading, .about-heading {
+        font-size: 1.5rem; /* Reduce el tamaño del texto */
+    }
+
+    .promo-description, .about-description {
+        font-size: 0.9rem; /* Reduce el tamaño del texto */
+    }
+
+    .promo-button, .about-button {
+        padding: 0.5rem 1rem; /* Reduce el padding del botón */
+    }
+}
+
+@media (max-width: 480px) {
+    .promo-title, .promo-heading, .about-heading {
+        font-size: 1.2rem; /* Reduce aún más el tamaño del texto */
+    }
+
+    .promo-description, .about-description {
+        font-size: 0.8rem; /* Ajusta el tamaño del texto para pantallas muy pequeñas */
+    }
+
+    .promo-button, .about-button {
+        font-size: 0.8rem; /* Ajusta el tamaño de la fuente del botón */
+        padding: 0.4rem 0.8rem; /* Reduce aún más el padding del botón */
+    }
 }
