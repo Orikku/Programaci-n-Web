@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.navbar .nav-item > .nav-link > svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  fill: currentColor;
+}
+
+footer.footer {
+  border-top: 1.5px solid rgb(43 48 53);
+}

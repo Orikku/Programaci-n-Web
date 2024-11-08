@@ -1,29 +1,9 @@
 /* CSS General */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
 body {
     background-color: #f9f9f9;
     font-size: 16px;
     line-height: 1.5;
     color: #333;
-}
-
-/* Header */
-.nav-link {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.9rem;
-}
-
-.nav-link i {
-    font-size: 1.5rem;
 }
 
 /* Sección de Promociones y Sobre Nosotros */
