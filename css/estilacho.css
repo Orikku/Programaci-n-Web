@@ -6,6 +6,21 @@ body {
     color: #333;
 }
 
+.about-section img {
+    display: block; /* Elimina los espacios extra alrededor de la imagen */
+    margin-left: auto; /* Ajusta el margen izquierdo automáticamente */
+    margin-right: auto; /* Ajusta el margen derecho automáticamente */
+    background-repeat: no-repeat; /* Evita la repetición */
+  }
+  
+
+.card {
+    background-repeat: no-repeat;
+    background-size: cover; /* Asegura que la imagen ocupe todo el espacio */
+    background-position: center; /* Centra la imagen */
+  }
+  
+
 /* Sección de Promociones y Sobre Nosotros */
 .promo-section, .about-section {
     display: flex;
