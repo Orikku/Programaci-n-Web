@@ -1,6 +1,28 @@
 "use strict";
 import api from "./api.js";
 
+class FileUploadResult {
+	constructor(status, file_url, error = null) {
+		this.status = status;
+		this.file_url = file_url;
+		this.error = error;
+	}
+}
+
+class FileDeleteResult {
+	constructor(status, error = null) {
+		this.status = status;
+		this.error = error;
+	}
+}
+
+class FileGetResult {
+	constructor(status, file_url, error = null) {
+		this.status = status;
+		this.file_url = file_url;
+		this.error = error;
+	}
+}
 
 export async function uploadFile(file) {
 	const formData = new FormData();
@@ -15,10 +37,10 @@ export async function uploadFile(file) {
 		let xError;
 
 		if (responce.ok) {
-			return data.file_url;
+			return new FileUploadResult(true, data.file_url);
 		}
 	} catch (error) {
-		window.alert(error);
+		return new FileUploadResult(false, null, error);
 	}
 }
 
@@ -33,25 +55,17 @@ export async function getFile(fileUrl) {
 		const data = await responce.json();
 
 		if (responce.ok) {
-			return data.file_url;
+			return new FileGetResult(true, data.file_url);
 		}
 		xError = response.headers.get("x-error");
-
-		switch (xError) {
-			case "FileNotFound":
-				window.alert("Archivo no encontrado");
-				break;
-			default:
-				window.alert(data.error);
-				break;
-		}
+		return new FileGetResult(false, null, xError);
 	} catch (error) {
-		window.alert(error);
+		return new FileGetResult(false, null, error);
 	}
 }
 
 export async function deleteFile(fileUrl) {
-  const params = new URLSearchParams();
+	const params = new URLSearchParams();
 	params.append("file_url", fileUrl);
 
 	try {
@@ -61,19 +75,11 @@ export async function deleteFile(fileUrl) {
 		const data = await responce.json();
 
 		if (responce.ok) {
-			return data.status;
+			return new FileDeleteResult(true);
 		}
 		xError = response.headers.get("x-error");
-
-		switch (xError) {
-			case "FileNotFound":
-				window.alert("Archivo no encontrado");
-				break;
-			default:
-				window.alert(data.error);
-				break;
-		}
+		return new FileDeleteResult(false, xError);
 	} catch (error) {
-		window.alert(error);
+		return new FileDeleteResult(false, error);
 	}
 }
