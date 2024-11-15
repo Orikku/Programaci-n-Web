@@ -65,6 +65,7 @@ export async function getFile(fileUrl) {
 }
 
 export async function deleteFile(fileUrl) {
+	console.log("delete file")
 	const params = new URLSearchParams();
 	params.append("file_url", fileUrl);
 
@@ -78,8 +79,10 @@ export async function deleteFile(fileUrl) {
 			return new FileDeleteResult(true);
 		}
 		xError = response.headers.get("x-error");
+		console.log(xError);
 		return new FileDeleteResult(false, xError);
 	} catch (error) {
+		console.log(error);
 		return new FileDeleteResult(false, error);
 	}
 }

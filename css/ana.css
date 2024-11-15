@@ -3,9 +3,9 @@ header {
 }
 
 body {
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    min-height: 100dvh;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	min-height: 100dvh;
 }
 
 aside.sidebar-nav .nav-group {
@@ -57,16 +57,36 @@ aside.sidebar-nav .nav-group {
 		}
 	}
 }
+
+.code-block {
+	padding: 8px;
+	border-radius: 10px;
+	position: relative;
+
+	.code-text {
+		margin: 0;
+		font-family: monospace;
+	}
+
+	& > .copy-btn {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+	}
+}
+
 footer {
-    background-color: #131312;
-    color: #ffffff;
-    padding: 2rem 0;
-    text-align: center;
+	background-color: #131312;
+	color: #ffffff;
+	padding: 2rem 0;
+	text-align: center;
 }
+
 footer a {
-    color: #ffffff;
-    text-decoration: none;
+	color: #ffffff;
+	text-decoration: none;
 }
+
 footer a:hover {
-    color: #8b8b8b;
+	color: #8b8b8b;
 }

@@ -1,6 +1,6 @@
 "use strict";
 import api from "../services/api.js";
-import { uploadFile, getFile, deleteFile } from "../services/files.js";
+import { uploadFile, deleteFile } from "../services/files.js";
 
 export default function main(model) {
 	initForm(model);
@@ -39,6 +39,18 @@ function onResult(data) {
 	document.getElementById("model-label").textContent = data.model;
 }
 
+function populateTemplate(data) {
+	let template = document.getElementById("result-analysis-template");
+	let container = document.getElementById("result-analysis-container");
+	let clone = template.content.cloneNode(true);
+
+	for (let i of data.error) {
+		clone.querySelector(".code-line").textContent = `Linea ${i[0]}`;
+		clone.querySelector(".code-text").textContent = i[1];
+	}
+	container.appendChild(clone);
+}
+
 async function onFormSumbit(e, model) {
 	e.preventDefault();
 	startLoading();
@@ -47,19 +59,43 @@ async function onFormSumbit(e, model) {
 	let result = await uploadFile(form.inputGroupFile04.files[0]);
 
 	if (result.status) {
-		let analysis = model == "model_1600e" ? await analyze1600(result.file_url) : await analyze150(result.file_url);
+		let analysis = model == "model_1600e" ? await analyzeWithErrors(result.file_url) : await analyze150(result.file_url);
 		if (analysis) {
-			await deleteFile(result.file_url);
-			onResult(analysis);
+			if (model == "model_1600e") {
+				populateTemplate(analysis)
+			} else {
+				onResult(analysis);
+			}
 		}
+		await deleteFile(result.file_url);
 		stopLoading();
 		return;
 	}
+
 	if (result.file_url) {
 		await deleteFile(result.file_url);
 	}
 	onError(result.error);
 	stopLoading();
+}
+
+async function analyzeWithErrors(fileURL) {
+	const params = new URLSearchParams();
+	params.append("url", fileURL);
+
+	try {
+		const response = await fetch(`${api.apiUrl}/xss_analysis/analyze_js/errors?${params.toString()}`);
+		const data = await response.json();
+		let xError;
+
+		if (response.ok) {
+			return populateTemplate(data)
+		}
+		xError = response.headers.get("x-error");
+		onError(xError);
+	} catch (error) {
+		onError(error);
+	}
 }
 
 async function analyze150(fileURL) {
